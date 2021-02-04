@@ -1,0 +1,106 @@
+.modal-heading-user {
+  height: 40px;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 2px 2px 8px rgb(0 0 0 / 8%);
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 18;
+  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+  justify-content: space-between;
+}
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+  color: #201e27;
+  margin: 0;
+  padding: 18px;
+}
+.my-label {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  color: #000000;
+}
+.inp-co {
+  padding: 20px;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+}
+.my-label {
+  margin-bottom: 10px;
+}
+.inp-co > input,
+.inp-co > textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #a0a5af;
+  outline: none;
+  transition: 0.3s;
+}
+
+.inp-co > textarea {
+  resize: none;
+}
+.check {
+  flex-direction: row;
+}
+.check > .my-label {
+  margin-right: 20px;
+}
+.inp-co > input:hover {
+  border: 1px solid #01a3a4;
+}
+.inp-co > textarea :hover {
+  border: 1px solid #01a3a4;
+}
+.floca {
+  margin-left: 20px;
+}
+::placeholder {
+  color: #a0a5af;
+}
+.mo-btn {
+  color: #fff;
+  background: #1a73e8;
+  border: none;
+  margin-right: 20px;
+  outline: none;
+  min-width: 9.0625rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.3125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  height: 2.5rem;
+  cursor: pointer;
+  float: right;
+}
+.file-upload {
+  outline: dashed;
+  min-width: 9.0625rem;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.3125rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  height: 2.5rem;
+  cursor: pointer;
+  float: right;
+  background: none;
+  border: none;
+  color: #1a73e8;
+}
+
+@media (max-width: 540px) {
+  .inp-co {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
