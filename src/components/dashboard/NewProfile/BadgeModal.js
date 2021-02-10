@@ -41,8 +41,8 @@ const BadgeModal = ({ isOpen, closeModal }) => {
       onRequestClose={closeModal}
       style={{
         content: {
-          top: width < 500 ? 0 : 40,
-          bottom: width < 500 ? 0 : 40,
+          top: width < 500 ? 0 : 80,
+          bottom: width < 500 ? 0 : 80,
           position: "absolute",
           left: 0,
           right: 0,
@@ -51,12 +51,12 @@ const BadgeModal = ({ isOpen, closeModal }) => {
           padding: 0,
           backgroundColor: "white",
           color: "#949EC4",
-          maxWidth: 800,
+          maxWidth: 750,
           margin: "auto",
           borderRadius: 10,
         },
         overlay: {
-          background: "rgba(16,16,16,0.4)",
+          background: "rgba(16,16,16,0.75)",
         },
       }}
     >
@@ -84,7 +84,7 @@ const BadgeModal = ({ isOpen, closeModal }) => {
                 selected.w ? "modal-select-btn res" : "modal-select-normal res"
               }
             >
-              Work experience
+              Volunteer Work
             </button>
             <button
               onClick={(e) => {

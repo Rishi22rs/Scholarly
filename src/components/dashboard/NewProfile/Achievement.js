@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ErrMsg from "./ErrMsg";
+import ErrMsg1 from "./ErrMsg1";
 import TextEditor from "./TextEditor";
 
 const Achievement = () => {
@@ -12,33 +14,43 @@ const Achievement = () => {
       <div className="two">
         <div className="inp-co">
           <label className="my-label">Achievement Organization</label>
-          <input
+          {/* <input
             type="text"
             placeholder="Example: Google or Facebook"
             name="title"
             onChange={(e) => setTitle(e.target.value)}
+          /> */}
+          <ErrMsg
+            placeholder="Example: Google or Facebook"
+            msg="Company is required"
           />
         </div>
         <div className="inp-co">
           <label className="my-label">Title</label>
-          <input
+          {/* <input
             type="text"
             placeholder="Example: Software Engineer"
             name="title"
             onChange={(e) => setTitle(e.target.value)}
+          /> */}
+          <ErrMsg
+            placeholder="Example: Software Engineer"
+            msg="Title is required"
           />
         </div>
       </div>
       <div className="inp-co">
         <label className="my-label">Date Recieved</label>
-        <select className="inp-type">
+        {/* <select className="inp-type">
           <option>January</option>
-        </select>
+        </select> */}
+        <ErrMsg1 msg="Start month is required" />
       </div>
       <div className="inp-co">
-        <select className="inp-type">
+        {/* <select className="inp-type">
           <option>January</option>
-        </select>
+        </select> */}
+        <ErrMsg1 msg="Start year is required" />
       </div>
 
       <div className="inp-co" style={{ flexDirection: "row" }}>

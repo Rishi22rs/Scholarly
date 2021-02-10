@@ -73,7 +73,12 @@ export const SignupForm2 = (props) => {
         </div>
       </MediaQuery>
       <div className="modal__sec2">
-        <CloseRoundedIcon onClick={() => {props.setState(false); props.setOpenSignup(false)}} />
+        <CloseRoundedIcon
+          onClick={() => {
+            props.setState(false);
+            props.setOpenSignup(false);
+          }}
+        />
         <div className="modal__content3">
           <Formik
             initialValues={{
@@ -85,7 +90,7 @@ export const SignupForm2 = (props) => {
             validationSchema={formSchema}
             // validator={() => ({})}
             onSubmit={(values) => {
-              props.setData({...props.data, ...values})
+              props.setData({ ...props.data, ...values });
 
               var user = {
                 firstname: props.data.fullName.split(" ")[0],
@@ -95,21 +100,25 @@ export const SignupForm2 = (props) => {
                 school: values.college,
                 gradyear: values.date,
                 degree: values.degree,
-                stream: values.major
-              }
+                stream: values.major,
+              };
 
-              signUp(user).then((res) => {
-                if (res.status === "success") {
-                  localStorage.setItem("student-nation.com-tokens", res.token)
-                  history.push({
-                    pathname: "/dashboard/newProfile",
-                    signedup: true
-                  })
-                }
-              })
-              .catch(err => {
-                console.log("error: ", err);
-              })
+              signUp(user)
+                .then((res) => {
+                  if (res.status === "success") {
+                    localStorage.setItem(
+                      "student-nation.com-tokens",
+                      res.token
+                    );
+                    history.push({
+                      pathname: "/dashboard/newProfile",
+                      signedup: true,
+                    });
+                  }
+                })
+                .catch((err) => {
+                  console.log("error: ", err);
+                });
             }}
           >
             {({

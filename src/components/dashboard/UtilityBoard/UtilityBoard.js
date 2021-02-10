@@ -24,7 +24,7 @@ function UtilityBoard() {
           <button className="mybtn-d">Availability</button>
         </div>
         <div className="illustration2">
-          <img className="frame1" src={Frame1} alt="Frame2" />
+          <img className=" fu" src={Frame1} alt="Frame2" />
         </div>
       </div>
       {/* <WhatsApp/> */}

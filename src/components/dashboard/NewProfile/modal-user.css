@@ -5,31 +5,41 @@
   background: #201e27;
   border-radius: 3px;
   margin-right: 10px;
+  cursor: pointer;
+  border: none;
 }
 .cross {
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
 }
 .modal-select-btn {
-  width: 216px;
+  padding: 0.625rem 2rem;
+  min-width: 100px;
   height: 44px;
   border: none;
   color: white;
   background: #1a73e8;
   border-radius: 50px;
   outline: none;
+  font-weight: 600;
+  font-size: 0.875rem;
 }
 
 .modal-select-normal {
-  width: 216px;
+  padding: 0.625rem 2rem;
+  min-width: 100px;
   height: 44px;
   border: none;
-  color: rgba(0, 0, 0, 0.5);
+  color: #afb7c2;
   background: none;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 1px solid #afb7c2;
   border-radius: 50px;
+  font-weight: 500;
+  font-size: 0.875rem;
 }
+
 .inp-co-1 {
   padding: 20px;
   padding-left: 60px;
@@ -37,11 +47,23 @@
   display: flex;
   flex-direction: column;
 }
+.inp-co > input {
+  color: black;
+  font-size: 0.875rem;
+  font-family: Inter;
+}
+.inp-co > input:focus {
+  border: 2px solid #95d9ca;
+}
 .inp-co-user {
   /* padding: 0 10px 10px 10px; */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+#com {
+  margin-top: 20px;
 }
 .two {
   display: flex;
@@ -65,11 +87,17 @@
   outline: none;
   transition: 0.3s;
 }
+.inp-type:focus {
+  border: 2px solid #95d9ca;
+}
+.inp-type:hover {
+  border: 1px solid #95d9ca;
+}
 .exp {
   font-family: Inter;
   font-style: normal;
   font-weight: 500;
-  font-size: 19.92px;
+  font-size: 0.875rem;
   line-height: 24px;
   text-align: center;
   color: #000000;
@@ -77,6 +105,13 @@
 .err-msg {
   color: red;
   font-weight: 700;
+}
+.res {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.res:focus {
+  outline: none;
 }
 @media (max-width: 540px) {
   .two {
@@ -102,5 +137,8 @@
   }
   .res {
     margin-bottom: 20px;
+  }
+  #com {
+    margin-top: 0;
   }
 }

@@ -15,7 +15,7 @@
   margin: 0 auto;
   margin-top: 5%;
   width: 90%;
-  max-width: 998px;
+  max-width: 980px;
   /* max-width: 1000px; */
   min-height: 100%;
   padding: 0.9375rem;
@@ -90,7 +90,7 @@
   background: #fff;
 
   /* height: 180px; */
-  height: 160px;
+  height: 170px;
   cursor: pointer;
 
   display: -webkit-box;

@@ -46,10 +46,11 @@ import SkeletonLoader from "tiny-skeleton-loader-react";
 import BadgeModal from "./BadgeModal";
 
 function NewProfile(props) {
+  const [pp, setPp] = useState(true);
   // For Profile and exp modal opening
   const [openProfile, setOpenProfile] = useState(false);
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   // For opening the modal of Preferences
   const [openRoles, setOpenRoles] = useState(false);
   const [openExp, setOpenExp] = useState(false);
@@ -89,6 +90,7 @@ function NewProfile(props) {
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
     setIsOpen(false);
+    setPp(true);
   };
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -131,9 +133,9 @@ function NewProfile(props) {
     if (body.experience?.length > 0) {
       GetExpByUserId(body._id).then((res) => {
         setAddExperience(res.data);
-        setLoading(false);
       });
     }
+    setLoading(false);
   }, []);
 
   const handlePreferenceUpdate = (preference_type) => {
@@ -274,6 +276,7 @@ function NewProfile(props) {
                   <img
                     onClick={openAvatarFile}
                     style={{
+                      display: pp ? "block" : "none",
                       width: "20px",
                       marginLeft: "-35px",
                       cursor: "pointer",
@@ -495,7 +498,7 @@ function NewProfile(props) {
               </div>
             ) : (
               <div className="newProfile__experience__bg">
-                <h3>Add your experience</h3>
+                <h3 style={{ padding: 0 }}>Add your experience</h3>
                 <p>
                   Stand out to recruiters by adding your past and upcoming
                   experiences
@@ -836,7 +839,13 @@ function NewProfile(props) {
               Get noticed by recruitments. Add things like hackathons and
               classes you’ve TA’d.
             </p>
-            <button className="btn btn-badge" onClick={() => setIsOpen(true)}>
+            <button
+              className="btn btn-badge"
+              onClick={() => {
+                setIsOpen(true);
+                setPp(false);
+              }}
+            >
               Add ID Card
             </button>
           </div>

@@ -19,7 +19,7 @@
 }
 .illustration2 {
   width: 360px;
-  height: 230px;
+  height: 150px;
   margin-left: 30px;
   margin-top: 25px;
   background-color: white;
@@ -27,6 +27,14 @@
   position: relative;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   display: inline-block;
+}
+.fu {
+  margin: 0;
+  position: relative;
+  right: -110px;
+  border-radius: inherit;
+  bottom: -0.95px;
+  height: 150px;
 }
 .illustration3 {
   width: 520px;

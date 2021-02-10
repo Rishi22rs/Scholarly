@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ErrMsg from "./ErrMsg";
+import ErrMsg1 from "./ErrMsg1";
 import TextEditor from "./TextEditor";
 
 const Other = () => {
@@ -13,6 +15,7 @@ const Other = () => {
     affiliation: false,
     sport: false,
     hackathon: false,
+    competition: false,
   });
   return (
     <>
@@ -24,7 +27,7 @@ const Other = () => {
               e.preventDefault();
               setSelected({
                 ...selected,
-                [e.target.name]: true,
+                [e.target.name]: !selected[e.target.name],
               });
             }}
             name="club"
@@ -39,7 +42,7 @@ const Other = () => {
               e.preventDefault();
               setSelected({
                 ...selected,
-                [e.target.name]: true,
+                [e.target.name]: !selected[e.target.name],
               });
             }}
             name="affiliation"
@@ -56,7 +59,7 @@ const Other = () => {
               e.preventDefault();
               setSelected({
                 ...selected,
-                [e.target.name]: true,
+                [e.target.name]: !selected[e.target.name],
               });
             }}
             name="sport"
@@ -73,7 +76,7 @@ const Other = () => {
               e.preventDefault();
               setSelected({
                 ...selected,
-                [e.target.name]: true,
+                [e.target.name]: !selected[e.target.name],
               });
             }}
             name="hackathon"
@@ -85,53 +88,90 @@ const Other = () => {
           >
             Hackathon
           </button>
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              setSelected({
+                ...selected,
+                [e.target.name]: !selected[e.target.name],
+              });
+            }}
+            name="competition"
+            className={
+              selected.competition
+                ? "modal-select-btn res"
+                : "modal-select-normal res"
+            }
+            id="com"
+            onClick={(e) => {
+              e.preventDefault();
+              setSelected({
+                ...selected,
+                [e.target.name]: !selected[e.target.name],
+              });
+            }}
+          >
+            Competition
+          </button>
         </div>
       </div>
       <div className="two">
         <div className="inp-co">
           <label className="my-label">Name</label>
-          <input
+          {/* <input
             type="text"
             placeholder="Example: Google or Facebook"
             name="title"
             onChange={(e) => setTitle(e.target.value)}
+          /> */}
+          <ErrMsg
+            placeholder="Example: Google or Facebook"
+            msg="Company is required"
           />
         </div>
         <div className="inp-co">
           <label className="my-label">Role</label>
-          <input
+          {/* <input
             type="text"
             placeholder="Example: Software Engineer"
             name="title"
             onChange={(e) => setTitle(e.target.value)}
+          /> */}
+          <ErrMsg
+            placeholder="Example: Software Engineer"
+            msg="Title is required"
           />
         </div>
       </div>
       <div className="two">
         <div className="inp-co">
           <label className="my-label">From</label>
-          <select className="inp-type">
+          {/* <select className="inp-type">
             <option>January</option>
             <option>February</option>
-          </select>
+          </select> */}
+          <ErrMsg1 msg="Start month is required" />
         </div>
         <div className="inp-co">
           <label className="my-label">To</label>
-          <select className="inp-type">
+          {/* <select className="inp-type">
             <option>January</option>
-          </select>
+          </select> */}
+          <ErrMsg1 msg="End month is required" />
         </div>
       </div>
       <div className="two">
         <div className="inp-co">
-          <select className="inp-type">
+          {/* <select className="inp-type">
             <option>January</option>
-          </select>
+          </select> */}
+          <ErrMsg1 msg="Start year is required" />
         </div>
         <div className="inp-co">
-          <select className="inp-type">
+          {/* <select className="inp-type">
             <option>January</option>
-          </select>
+          </select> */}
+          <ErrMsg1 msg="End year is required" />
         </div>
       </div>
       <div className="inp-co" style={{ flexDirection: "row" }}>
